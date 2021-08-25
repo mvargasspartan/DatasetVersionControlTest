@@ -38,14 +38,14 @@ def handleCheckout(commitID):
             
     p = subprocess.Popen('git checkout {0} DataSet.dvc'.format(commitID), shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     printResponse(p)
-    p = subprocess.Popen('dvc checkout', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen('dvc pull', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     printResponse(p)
 
     # check the download
     successful_download = os. path. isdir(path + '\DataSet')
     while not successful_download:
         print("retrying files download...")
-        p = subprocess.Popen('dvc checkout', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p = subprocess.Popen('dvc pull', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         printResponse(p)
         successful_download = os. path. isdir(path + '\DataSet')
 
@@ -57,14 +57,14 @@ def handleCheckout_Linux(commitID):
             
     p = subprocess.Popen('git checkout {0} DataSet.dvc'.format(commitID), shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     printResponse(p)
-    p = subprocess.Popen('dvc checkout', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen('dvc pull', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     printResponse(p)
 
     # check the download
     successful_download = os. path. isdir(path + '/DataSet')
     while not successful_download:
         print("retrying files download...")
-        p = subprocess.Popen('dvc checkout', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p = subprocess.Popen('dvc pull', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         printResponse(p)
         successful_download = os. path. isdir(path + '/DataSet')
         
