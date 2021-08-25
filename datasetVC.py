@@ -10,22 +10,12 @@ yourOS = platform.system()
 
 if yourOS == "Windows":
     # Windows stuff
+    handle_Windows(sys.argv)
     pass
 elif yourOS == "Linux":
     # Linux stuff
     handle_Linux(sys.argv)
 
 
-#print(updateVersion("v1.4"))
-
-
-#yourOS = platform.system()
-#if yourOS == "Windows":
-
-#if args[1] == "pull":
-
-
-
-#if args[1] == "push":
 
 
